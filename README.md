@@ -21,3 +21,5 @@ event.initEvent('click', false, false);
 aLink.dispatchEvent(event); // 脚本触发
 ```
 **M53之后，可以由 click() 强制执行点击事件做到自动触发**
+
+```引入：<script src="https://cyningwang.github.io/FrCapture/FrCapture.js"></script>```
