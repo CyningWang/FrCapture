@@ -11,17 +11,22 @@
  */
 
 (function(window, document){
-	var video, type; // 视频 & 图片保存格式
+	var video, type, width, height; // 视频 & 图片保存格式 & 宽、高
 
 	var captureSetting = function(setting){
-		setting || (setting = {
-			video: document.getElementsByTagName('video')[0],
-			type: 'image/jpeg'
-		});
+		setting || (setting = {}); 
 
 		// 设置
 		video = setting.video || document.getElementsByTagName('video')[0];
+		
+		// 判断是否存在视频, 不存在, 抛出异常提示
+		if(!video){
+			throw new Error('the current page there is no HTMLVideoElement');
+		}
+		
 		type = setting.type || 'image/jpeg';
+		width = setting.width || video.clientWidth;
+		height = setting.height || video.clientHeight;
 
 		return arguments.callee;
 	}(); // 自执行初始化一次
@@ -39,15 +44,10 @@
 
 	// 视频截图函数
 	function screenShot(video, type){
-		// 判断是否存在视频, 不存在, 抛出异常提示
-		if(!video){
-			throw new Error('the current page there is no HTMLVideoElement');
-		}
-
 		// 创建画布
 		var canvas = document.createElement('canvas');
-		canvas.width = video.clientWidth;
-		canvas.height = video.clientHeight;
+		canvas.width = width;
+		canvas.height = height;
 		var context = canvas.getContext('2d');
 
 		// 截图(来自视频)
