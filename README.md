@@ -6,7 +6,7 @@
 #### 关于使用：
 1. 快捷键 ctrl + alt + A
 2. 默认初始化过一次，视频源默认是当前页面首个视频，图片默认保存格式是'image/jpeg'
-3. ```captureSetting( { video: [可选], type: [可选] } );```
+3. ```captureSetting( { video: [可选], type: [可选] }, width: [可选], height: [可选] );```
  
 #### 问题：
 chrome浏览器自从M53版本后开始禁用所有由脚本发起的默认响应，由```脚本触发超链接文件下载```是其中之一。
