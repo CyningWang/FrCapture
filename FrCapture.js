@@ -81,10 +81,10 @@
 	
 
 	// 图片下载
-	function downloadImg(fileName, content, type){
+	function downloadImg(fileName, base64Img){
 		var aLink = document.createElement('a');
 		aLink.download = fileName;
-		var blob = base64Img2Blob(content); // base64 → blob
+		var blob = base64Img2Blob(base64Img); // base64 → blob
 		aLink.href = window.URL.createObjectURL(blob);
 		document.body.appendChild(aLink); // firefox下需要渲染到DOM树中，才能通过click()脚本触发下载
 		aLink.click(); // 脚本触发
