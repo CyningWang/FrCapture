@@ -55,7 +55,7 @@
 
 		// 数据格式处理
 		type || (type = 'image/jpeg');
-		var dataUrl = canvas.toDataURL(type); // 将当前canvas → base64文件流
+		var dataUrl = canvas.toDataURL(type); // 将当前canvas内容 → base64图片
 
 		// 下载
 		downloadImg('', dataUrl, type);
