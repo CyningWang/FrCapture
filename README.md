@@ -24,6 +24,7 @@ aLink.dispatchEvent(event); // 脚本触发
 
 #### 问题二：
 ```出现如下报错：Tainted canvases may not be exported.```
+
 这是因为canvas本身的安全机制对跨域作出了限制，其中一些涉及导出的方法，如toDataURL，不能对跨域资源进行操作。
 简单的说，就是视频资源和网站不在同一个域下，所以报错。
 
