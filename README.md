@@ -23,3 +23,6 @@ aLink.dispatchEvent(event); // 脚本触发
 **M53之后，可以由 click() 强制执行点击事件做到自动触发**
 
 ```引入：<script src="https://cyningwang.github.io/FrCapture/FrCapture.js"></script>```
+
+**FrCapture.js更多是作为一段即时代码，直接放到console控制台中，然后运行。就可以通过快捷键对一个没有截图工具的网站进行视频截图。**
+**SnapShot.js则是作为开发时导入的组件，可以给视频添加截图功能。(想法)**
